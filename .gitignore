@@ -4,3 +4,4 @@ __pycache__/
 .env
 event_certificate/
 *.ttf
+.DS_Store
