@@ -1,7 +1,16 @@
 *.xlsx
 __pycache__/
-*.pdf
 .env
 event_certificate/
 *.ttf
 .DS_Store
+
+
+# Ignore all image/pdf data files
+*.pdf
+*.png
+*.jpg
+*.jpeg
+*.svg
+*.gif
+*.ico
