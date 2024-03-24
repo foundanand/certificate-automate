@@ -1,0 +1,6 @@
+*.xlsx
+__pycache__/
+*.pdf
+.env
+event_certificate/
+*.ttf
