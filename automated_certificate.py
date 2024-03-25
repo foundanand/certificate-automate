@@ -17,12 +17,12 @@ NAME_FONT = pdfmetrics.registerFont(TTFont('Book-Antiqua', 'Book-Antiqua.ttf'))
 FILEPATH = "/path/to/excel/file.xlsx"
 
 # Sample Test case
-# EMAIL_ID = "anand.lahoti15@gmail.com"
-# PER_NAME = "Anand Lahoti"
+# EMAIL_ID = "youremail@mail.com" 
+# PER_NAME = "Your Name" 
 
 # Certificate Details
-CERTIFICATE = "certificate 4.pdf" # Path to the certificate template
-EVENT_NAME  = "FinGenAI" # Event Name
+CERTIFICATE = "certificate.pdf" # Path to the certificate template
+EVENT_NAME  = "EVENT NAME" # Event Name
 CERTIFICATE_FOLDER = f"event_certificate/{EVENT_NAME}" # Folder to store the certificates
 FONT_NAME = "Book-Antiqua" # Font Name
 

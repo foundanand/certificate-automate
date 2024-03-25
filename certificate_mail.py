@@ -57,6 +57,7 @@ def send_mail(EMAIL_ID, PER_NAME, EVENT_NAME, CERTIFICATE_FOLDER, CERTIFICATE):
     msg.attach(participant_certificate)
 
     # Create the SMTP server and send the email
+    # If you want to use a different email service, change the SMTP server
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.starttls()
     server.login(gmail_user, gmail_password)
