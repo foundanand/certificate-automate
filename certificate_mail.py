@@ -13,12 +13,12 @@ def send_mail(EMAIL_ID, PER_NAME, EVENT_NAME, CERTIFICATE_FOLDER, CERTIFICATE):
     PER_NAME = ' '.join(word.capitalize() for word in PER_NAME.split())
 
     # Import from .env file
-    gmail_user = os.getenv("AUTH_EMAIL")
-    gmail_password = os.getenv("AUTH_PASS")
+    admin_email = os.getenv("AUTH_EMAIL")
+    admin_password = os.getenv("AUTH_PASS")
 
     # Create a message container
     msg = MIMEMultipart()
-    msg['From'] = gmail_user
+    msg['From'] = admin_email
     msg['To'] = EMAIL_ID
     msg['Subject'] = "Certificate of Participation"
 
@@ -47,6 +47,10 @@ def send_mail(EMAIL_ID, PER_NAME, EVENT_NAME, CERTIFICATE_FOLDER, CERTIFICATE):
         </html>
     """
 
+    # Alternative way is to add external html file
+    # with open('path/to/html/file.html', 'r') as file: 
+    #     html = file.read()
+
     msg.attach(MIMEText(html, 'html'))
 
     # Add QR code attachment to the email
@@ -60,6 +64,6 @@ def send_mail(EMAIL_ID, PER_NAME, EVENT_NAME, CERTIFICATE_FOLDER, CERTIFICATE):
     # If you want to use a different email service, change the SMTP server
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.starttls()
-    server.login(gmail_user, gmail_password)
+    server.login(admin_email, admin_password)
     server.sendmail(msg['From'], msg['To'], msg.as_string())
     server.quit()
