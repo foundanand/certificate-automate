@@ -39,3 +39,11 @@ Now you're ready to run your Python application. Follow the instructions provide
 That's it! You've successfully installed the required dependencies and are ready to use the project.
 
 If you encounter any issues during the installation process, feel free to open an issue on this repository or contact the project maintainers for support.
+
+Upcoming features: 
+    - Design certificates using UI based interface
+    - Add AI generated qr code for verification of certificates (You will need to host your backend for verification)
+    - Emailing stats
+
+
+If you would like to contribute to this project, please create a PR
