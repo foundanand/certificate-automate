@@ -62,7 +62,7 @@ def send_mail(EMAIL_ID, PER_NAME, EVENT_NAME, CERTIFICATE_FOLDER, CERTIFICATE):
 
     # Create the SMTP server and send the email
     # If you want to use a different email service, change the SMTP server
-    server = smtplib.SMTP('smtp.gmail.com', 587)
+    server = smtplib.SMTP(os.getenv("SMTP_SERVER"), os.getenv("SMTP_PORT"))
     server.starttls()
     server.login(admin_email, admin_password)
     server.sendmail(msg['From'], msg['To'], msg.as_string())
