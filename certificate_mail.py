@@ -61,9 +61,12 @@ def send_mail(EMAIL_ID, PER_NAME, EVENT_NAME, CERTIFICATE_FOLDER, CERTIFICATE):
     msg.attach(participant_certificate)
 
     # Create the SMTP server and send the email
-    # If you want to use a different email service, change the SMTP server
-    server = smtplib.SMTP(os.getenv("SMTP_SERVER"), os.getenv("SMTP_PORT"))
-    server.starttls()
-    server.login(admin_email, admin_password)
-    server.sendmail(msg['From'], msg['To'], msg.as_string())
-    server.quit()
+    # SMTP server details are stored in the .env file
+    try:
+        server = smtplib.SMTP_SSL(os.getenv("SMTP_SERVER"), int(os.getenv("SMTP_PORT")))
+        server.login(admin_email, admin_password)
+        server.sendmail(msg['From'], msg['To'], msg.as_string())
+        server.quit()
+        print("Email sent successfully")
+    except Exception as e:
+        print("An error occurred:", e)
