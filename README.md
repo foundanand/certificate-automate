@@ -8,7 +8,7 @@ First, clone this repository to your local machine:
 
 ```
 git clone https://github.com/foundanand/certificate-automate.git
-cd your-repository
+cd certificate-automate
 ```
 
 ### 2. Install Dependencies
